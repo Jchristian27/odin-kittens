@@ -1,0 +1,9 @@
+<h2><%= kitten.name %></h2>
+<p>Age: <%= kitten.age %></p>
+<p>Cuteness: <%= kitten.cuteness %></p>
+<p>Softness: <%= kitten.softness %></p>
+<%= link_to "Edit Kitten", edit_kitten_path(kitten.id) %><br>
+<%= link_to "Delete Kitten" , kitten_path(kitten.id), data: { "turbo-method": :delete } %>
+<br>
+<hr style="border: none; height: 1px; background-color: #000;">
+<br>

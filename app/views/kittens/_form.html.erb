@@ -1,0 +1,24 @@
+<% if @kitten.errors.any? %>
+  The form contains <%= pluralize(@kitten.errors.count, "error") %>.
+  <ul>
+  <% @kitten.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<%= form_with model: @kitten do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+  
+  <%= f.label :age %>
+  <%= f.text_field :age %><br>
+
+  <%= f.label :cuteness %>
+  <%= f.text_field :cuteness %><br>
+
+  <%= f.label :softness %>
+  <%= f.text_field :softness %><br>
+  <br><br>
+  <%= f.submit "Submit" %>
+<% end %>
